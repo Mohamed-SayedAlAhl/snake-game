@@ -9,7 +9,6 @@ pygame.init()
 white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
-
 width = 600
 height = 400
 
@@ -119,6 +118,12 @@ def gameLoop():
                 elif event.key == pygame.K_DOWN:
                     y1_change = SnakeSize
                     x1_change = 0
+                elif event.key == pygame.K_PLUS or event.key == pygame.K_KP_PLUS or event.key == pygame.K_EQUALS:
+                    FPS += 1
+                elif event.key == pygame.K_MINUS or event.key == pygame.K_KP_MINUS or event.key == pygame.K_UNDERSCORE:
+                    FPS -= 1
+                    if FPS < 1:
+                        FPS = 1
                 elif event.key == pygame.K_p:
                     pause_game()
 
